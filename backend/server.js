@@ -15,7 +15,10 @@ const allowedOrigins = [
   "https://mini-linkidin-h3th.vercel.app" // deployed frontend
 ];
 
-
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 
 // Handle preflight for all routes
 app.options('*', cors({
