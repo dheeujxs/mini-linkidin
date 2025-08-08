@@ -19,13 +19,6 @@ app.use(cors({
   origin: allowedOrigins,
   credentials: true,
 }));
-
-// Handle preflight for all routes
-app.options('*', cors({
-  origin: allowedOrigins,
-  credentials: true,
-}));
-
 app.use(express.json());
 
 connectDB();
