@@ -8,7 +8,13 @@ import userRoutes from './routes/users.js';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: [
+    "http://localhost:3000",      // local dev
+    "https://mini-linkidin-h3th.vercel.app" // deployed frontend
+  ],
+    credentials: true
+}));
 app.use(express.json());
 
 connectDB();
