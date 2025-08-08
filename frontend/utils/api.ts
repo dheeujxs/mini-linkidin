@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000/api';
+const BASE = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://mini-linkidin-1.onrender.com/api';
 
 export const api = axios.create({
   baseURL: BASE,
