@@ -18,13 +18,13 @@ export default function HomePage() {
   const [newPost, setNewPost] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/posts")
+    fetch("https://mini-linkidin-1.onrender.com/api/posts")
       .then(res => res.json())
       .then(data => setPosts(data));
   }, []);
 
   const handlePost = async () => {
-    await fetch("http://localhost:8000/api/posts", {
+    await fetch("https://mini-linkidin-1.onrender.com/api/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function HomePage() {
       body: JSON.stringify({ content: newPost }),
     });
     setNewPost("");
-    const res = await fetch("http://localhost:8000/api/posts");
+    const res = await fetch("https://mini-linkidin-1.onrender.com/api/posts");
     setPosts(await res.json());
   };
 
